@@ -1,9 +1,11 @@
 package chess_layer;
 
+import board_layer.Board;
 import chess_layer.enums.Color;
 
 public class ChessMatch {
-
+	
+	private Board board;
 	private Integer turn;
 	private Color currentPlayer;
 	private boolean check;
@@ -12,6 +14,7 @@ public class ChessMatch {
 	private ChessPiece promoted;
 	
 	public ChessMatch() {
+		board = new Board(8,8);
 	}
 
 	public ChessMatch(Integer turn, Color currentPlayer, boolean check, boolean checkMate,
@@ -24,11 +27,17 @@ public class ChessMatch {
 		this.promoted = promoted;
 	}
 	
-	public ChessPiece piece[][] getPieces(){
-		
+	public ChessPiece[][] getPieces(){
+		ChessPiece[][] mat = new ChessPiece[board.getRows()][board.getColumns()];
+		for (int i=0; i<board.getRows();i++) {
+			for(int j=0; j<board.getColumns(); j++) {
+				mat[i][j] = (ChessPiece) board.piece(i, j);
+			}
+		}
+		return mat;
 	}
 	
-	public boolean[][] getPieces() {
+	public boolean[][] getPiec() {
 		return
 	}
 	

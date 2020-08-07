@@ -3,22 +3,19 @@ package board_layer;
 public class Piece {
 
 	protected Position position;
-
+	private Board board;
+	
 	public Piece() {
 	}
 
-	public Piece(Position position) {
-		this.position = position;
+	public Piece(Board board) {
+		this.board = board;
 	}
 
-	public Position getPosition() {
-		return position;
+	protected Board getBoard() {
+		return board;
 	}
 
-	public void setPosition(Position position) {
-		this.position = position;
-	}
-	
 	public boolean posibleMoves() {
 		return 
 	}
